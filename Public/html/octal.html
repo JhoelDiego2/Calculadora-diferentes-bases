@@ -1,0 +1,46 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+        href="file:///C:/Users/jhoel/faculdade/Tarefas_da_faculdade/arq_comp/calcular.png" />
+    <title>SPTecher's Machine</title>
+</head>
+
+<body>
+    <img src="https://www.sptech.school/assets/images/logos/sptech_logo_1.png">
+    <h1>SPTecher's Machine</h1>
+    <div>
+
+        <h2>Octal</h2>
+        <h2>Octal para decimal</h2>
+        <h3>Digite um número octal:</h3>
+        <input id="ipt_caractere1" type="number" min="0" max="7" placeholder="1º caractere">
+        <input id="ipt_caractere2" type="number" min="0" max="7" placeholder="2º caractere"><br>
+        <input id="ipt_caractere3" type="number" min="0" max="7" placeholder="3º caractere">
+        <input id="ipt_caractere4" type="number" min="0" max="7" placeholder="4º caractere">
+        <button onclick="converter()">Calcular</button>
+
+        Resultado: <span id="resultado"></span>
+    </div>
+
+    <script>
+        function converter() {
+            var valor_caractere1 = ipt_caractere1.value 
+            var valor_caractere2 = ipt_caractere2.value 
+            var valor_caractere3 = ipt_caractere3.value 
+            var valor_caractere4 = ipt_caractere4.value 
+            
+            var total = 8*8*8*valor_caractere1 + 8*8*valor_caractere2 + 8*valor_caractere3 + valor_caractere4
+            
+            resultado.innerHTML = `${total}`
+        }
+    </script>
+</body>
+
+</html>
