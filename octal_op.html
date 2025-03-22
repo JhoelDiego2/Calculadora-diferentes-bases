@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="file:///C:/Users/jhoel/Downloads/Design%20sem%20nome%20(10).png">
+    <link rel="stylesheet" href="octal_op.css">
+    <title>One Piece Code Converter</title>
+</head>
+<body>
+    <header id="InicioOP">
+        <nav class="nav">
+            <a href="InicioOP"><img src="file:///C:/Users/jhoel/Downloads/Design%20sem%20nome%20(8).png" ></a>
+            <div class="nav-list">
+                <ul>
+                    <li><a href="#InicioOP">Sobre</a></li>&nbsp;&nbsp;
+                    <li><a href="#Decimal">Decimal</a></li>&nbsp;&nbsp;
+                    <li><a href="#Binario">Binario</a></li>&nbsp;&nbsp;
+                    <li><a href="#Octal">Octal</a></li>&nbsp;&nbsp;
+                    <li><a href="#Hexadecimal">Hexadecimal</a></li>&nbsp;&nbsp;
+                    <li><a href="#Calculadora">Calculadora</a></li>&nbsp;&nbsp;
+                    <li><a href="#Desenvolvedores">Desenvolvedores</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="column1">
+                <div>
+                    <H1>ONE PIECE CODE CONVERTER</H1>
+                    <h2>
+                        BEM-VINDO À GRAND LINE<BR> DA CONVERSÃO NUMÉRICA!
+                    </h2>
+                    <p>
+                        Desvende códigos, navegue por bases numéricas e conquiste o tesouro dos números!
+                    </p>
+                    <p>
+                        Em um mundo onde a informação é o verdadeiro tesouro, você é convidado a embarcar
+                        numa jornada pela Grand Line das bases numéricas. Ao lado dos mais corajosos piratas,
+                        sua missão é decifrar códigos complexos, converter números entre diferentes bases e
+                        enfrentar desafios dignos do Cipher Pol! Só os mais habilidosos encontrarão o 
+                        verdadeiro tesouro oculto!
+                    </p>
+                    <a href="#Expli">Saiba mais</a>
+                </div>
+            </div>
+            <div class="column2"></div>
+        </div>
+        <a href="#Expli"><img src="" alt=""></a>
+    </header>
+    <main>
+        <section id="Expli">
+                <div class="column-1">
+                    <div>
+                        <h1>Como funciona a jornada</h1>
+                        <p>
+                            
+                            <span>Passo 1:</span> "Escolha sua base de origem e destino: Decimal, Binário, Octal ou Hexadecimal."
+                            <br><br>
+                            <span>Passo 2:</span> "Insira o código numérico que precisa ser decifrado."
+                            <br><br>
+                            <span>Passo 3:</span> "Clique em 'Decifrar Código' e veja o resultado!"
+                            <br><br>
+                            <span>Passo 4:</span> "Clique em 'Decifrar Código' e veja o resultado!"
+                        </p>
+                    </div>
+                </div>
+                <div class="column-2">
+                </div>
+            </section>
+        <section id="Octal">
+            <h1>Conversão Octal para outras bases</h1>
+            <div class="container">
+                <div class="column1-converter">
+                    <h2>Octal para decimal</h2>
+                    <h3>Digite um número octal:</h3>
+                    <input id="ipt_caractere1" type="number" min="0" max="7" placeholder="1º caractere">
+                    <input id="ipt_caractere2" type="number" min="0" max="7" placeholder="2º caractere"><br>
+                    <input id="ipt_caractere3" type="number" min="0" max="7" placeholder="3º caractere">
+                    <input id="ipt_caractere4" type="number" min="0" max="7" placeholder="4º caractere">
+                    <button onclick="converter()">Calcular</button>  
+                    
+                </div>
+                <div class="column2-resultado">
+                    <p>Resultado: <span id="resultado"></span></p>
+                    <input type="checkbox" id="resultado-visualizacao"><span>Conta:</span>
+                    <p id="resulado_octal_ver"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>
