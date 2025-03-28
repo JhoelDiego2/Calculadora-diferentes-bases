@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPTech Machine - Calculadora Multibase</title>
+</head>
+<body>
+    <h1>Calculadora Multibase</h1>
+    <div class="bloco">
+        <span>Selecione a base para fazer o calculo: </span>
+        <select id="base_entrada">
+            <option value="10">Decimal</option>
+            <option value="2">Binário</option>
+            <option value="8">Octal</option>
+            <option value="16">Hexadecimal</option>
+        </select><br>
+        <span>Digigte o primeiro número:</span>
+        <input id="num1" placeholder="Número 1"><br>
+        <span>Digite o segundo número:</span>
+        <input id="num2" placeholder="Número 2"><br>
+        Selecione a operação a ser feita: 
+        <button onclick="somar()">+</button>
+        <button onclick="subtrair()">-</button>
+        <button onclick="multiplicar()">*</button>
+        <button onclick="dividir()">/</button><br>
+        <span>Selecione a base para o resultado: </span>
+        <select id="base_saida">
+            <option value="10">Decimal</option>
+            <option value="2">Binário</option>
+            <option value="8">Octal</option>
+            <option value="16">Hexadecimal</option>
+        </select><br>
+        <div id="resultado_calc"></div>
+    </div>
+    <a href="index.html">Voltar para a página inicial</a>
+
+    <script>
+        // Função para converter para decimal 
+        function converterParaDecimal(numero, base) {
+            if (base == 10) return parseInt(numero, 10);
+            if (base == 2) return parseInt(numero, 2);
+            if (base == 8) return parseInt(numero, 8);
+            if (base == 16) return parseInt(numero, 16);
+            return 0;
+        }
+
+        // Função para formatar o resultado
+        function formatarResultado(resultado, base) {
+            if (base == 10) return resultado.toString();
+            if (base == 2) return resultado.toString(2);
+            if (base == 8) return resultado.toString(8);
+            if (base == 16) return resultado.toString(16).toUpperCase();
+            return "Erro";
+        }
+
+        // Função principal de cálculo com ifs uso de document.getElementByld, uma vez que daava erro nesta linha pelo uso de so .value
+        
+        function calcular(operacao) {
+            // Acessando elementos diretamente pelos IDs
+            var base_entrada = parseInt(document.getElementById('base_entrada').value);
+            var base_saida = parseInt(document.getElementById('base_saida').value);
+            var num1 = document.getElementById('num1').value;
+            var num2 = document.getElementById('num2').value;
+
+            // Validação básica
+            if (!num1 || !num2) {
+                alert("Preencha ambos os números!");
+                return;
+            }
+
+            // Converter para decimal
+            var num1_dec = converterParaDecimal(num1, base_entrada);
+            var num2_dec = converterParaDecimal(num2, base_entrada);
+
+            if (isNaN(num1_dec) || isNaN(num2_dec)) {
+                alert("Números inválidos para a base selecionada!");
+                return;
+            }
+
+            // Realizar operação com ifs
+            var resultado_dec;
+            if (operacao == "+") {
+                resultado_dec = num1_dec + num2_dec;
+            } 
+            else if (operacao == "-") {
+                resultado_dec = num1_dec - num2_dec;
+            } 
+            else if (operacao == "*") {
+                resultado_dec = num1_dec * num2_dec;
+            } 
+            else if (operacao == "/") {
+                if (num2_dec == 0) {
+                    alert("Divisão por zero!");
+                    return;
+                }
+                resultado_dec = num1_dec / num2_dec;
+            }
+            else {
+                alert("Operação inválida!");
+                return;
+            }
+
+            // Converter para base de saída e mostrar resultado
+            var resultado_final = formatarResultado(Math.floor(resultado_dec), base_saida);
+            resultado_calc.innerHTML = `Resultado: ${resultado_final}`;
+        }
+
+        // Funções de operação
+        function somar() { calcular("+"); }
+        function subtrair() { calcular("-"); }
+        function multiplicar() { calcular("*"); }
+        function dividir() { calcular("/"); }
+    </script>
+</body>
+</html>

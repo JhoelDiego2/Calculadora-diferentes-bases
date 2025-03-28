@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/hexadecimal.css" />
+    <link rel="icon" type="image/png" href="../Public/assets/calcular.png" />
+    <title>SPTecher's Machine - Hexadecimal</title>
+  </head>
+
+  <body>
+    <header id="inicio">
+        <nav class="nav">
+            <a href="inicio.html"> <img src="../Public/assets/SPTECH.png" alt="Logo_sptech"
+                width="95"></a>
+            <h1>SPTecher's Machine</h1>
+
+            <div class="nav-list">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="decimal.html">Decimal</a></li>
+                    <li><a href="binario.html">Binario</a></li>
+                    <li><a href="octal.html">Octal</a></li>
+                    <li><a href="hexadecimal.html">Hexadecimal</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hexadecimal">
+            <h2>Bem-vindo à aba Hexadecimal! Aqui, vamos te ensinar como converter números entre as bases Decimal,
+                Binário, Octal e Hexadecimal. Siga as instruções e explore as diferentes formas de representar
+                números em cada base. </h2>
+
+            <!-- <h2>Conversão de Hexadecimal</h2>
+            <input type="text" id="hexa" />
+            <button onclick="converter()">Converter</button>
+            <div id="divdecimal"></div>
+            <div id="divoctal"></div>
+            <div id="divbinario"></div> -->
+
+            <div class="container">
+                <div class="column-1">
+                </div>
+                <div class="column-2">
+                    <div>
+                        <h3>Hexadecimal para Binário</h3>
+                        <h4>Digite o numero hexadecimal: </h4><input id="hexadecimal_binario" placeholder="ex:1FA">
+                        <button onclick="hextoBin()">Converter</button>
+                        <p id="resultado_binario"></p>
+                    </div>
+                    <div>
+                        <h3>Hexadecimal para Octal</h3>
+                        <h4>Digite o numero hexadecimal: </h4><input id="hexadecimal_octal" placeholder="ex:1FA">
+                        <button onclick="hextoOct()">Converter</button>
+                        <p id="resultado_octal"></p>
+                    </div>
+                    <div>
+                        <h3>Hexadecimal para Decimal</h3>
+                        <h4>Digite o numero hexadecimal: </h4><input id="hexadecimal_dec" placeholder="ex:1FA">
+                        <button onclick="hextoDec()">Converter</button>
+                        <p id="resultado_decimal"></p>
+                    </div>
+                </div>
+                <div class="column-3">
+                </div>
+            </div>
+    
+    
+            <a href="inicio.html">Voltar para a página inicial</a>
+        
+        </section>
+    </main>
+</body>
+
+</html>
+<script>
+    /*function converter() {
+        var num = hexa.value;
+        var conversao = parseInt(num, 16);
+    divdecimal.innerHTML = `Decimal: ${conversao}`;
+    divoctal.innerHTML = `Octal: ${conversao.toString(8)}`;
+    divbinario.innerHTML = `Binário: ${conversao.toString(2)}`;
+  }*/
+
+    function hextoBin(){
+        var num = hexadecimal_binario.value;
+        var conversao = parseInt(num, 16);
+        resultado_binario.innerHTML = conversao.toString(2)
+    }
+
+    function hextoOct(){
+        var num = hexadecimal_octal.value;
+        var conversao = parseInt(num, 16);
+        resultado_octal.innerHTML = conversao.toString(8)
+    }
+
+    function hextoDec(){
+        var num = hexadecimal_dec.value;
+        var conversao = parseInt(num, 16);
+        resultado_decimal.innerHTML = conversao.toString(10)
+    }
+</script>

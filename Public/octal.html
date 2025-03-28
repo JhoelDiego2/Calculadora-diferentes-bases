@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Public/assets/calcular.png" />
+    <link rel="stylesheet" href="css/octal.css">
+    <title>SPTecher's Machine - octal</title>
+</head>
+
+<body>
+    <header id="inicio">
+        <nav class="nav">
+            <a href="inicio.html"> <img src="../Public/assets/SPTECH.png" alt="Logo_sptech"
+                width="95"></a>
+            <h1>SPTecher's Machine</h1>
+
+            <div class="nav-list">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="decimal.html">Decimal</a></li>
+                    <li><a href="binario.html">Binario</a></li>
+                    <li><a href="octal.html">Octal</a></li>
+                    <li><a href="hexadecimal.html">Hexadecimal</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main >
+        <section id="decimal">
+            <h2>Bem-vindo à aba Octal! Aqui, vamos te ensinar como converter números entre as bases Decimal,
+                Binário, Octal e Hexadecimal. Siga as instruções e explore as diferentes formas de representar
+                números em cada base</h2>
+            <div class="container"> 
+                <div class="column-1">
+
+                </div>
+                <div class="column-2">
+                    <div>
+                    <h3>Octal para Decimal</h3>
+                    <h4>Digite um número octal:</h4>
+                    <input id="ipt_caractere1" type="number" min="0" max="7" placeholder="1º caractere">
+                    <input id="ipt_caractere2" type="number" min="0" max="7" placeholder="2º caractere"><br>
+                    <input id="ipt_caractere3" type="number" min="0" max="7" placeholder="3º caractere">
+                    <input id="ipt_caractere4" type="number" min="0" max="7" placeholder="4º caractere">
+                    <button onclick="octal_decimal()">Calcular</button>
+                    <p id="resultado_decimal"></p> <br>
+
+                    </div>
+                    <div>
+                        <h3>Octal para Binário</h3>
+                        <h4>Digite um número octal:</h4>
+                        <input id="ipt_caractere1_bi" type="number" min="0" max="7" placeholder="1º caractere">
+                        <input id="ipt_caractere2_bi" type="number" min="0" max="7" placeholder="2º caractere"><br>
+                        <input id="ipt_caractere3_bi" type="number" min="0" max="7" placeholder="3º caractere">
+                        <input id="ipt_caractere4_bi" type="number" min="0" max="7" placeholder="4º caractere">
+                        <button onclick="octal_binario()">Calcular</button>
+                        <p id="resultado_binario"></p> 
+                        
+                    </div>
+                    <div>
+                            <h3>Octal para Hexadecimal</h3>
+                            <h4>Digite um número octal:</h4>
+                            <input id="ipt_caractere1_hex" type="number" min="0" max="7" placeholder="1º caractere">
+                            <input id="ipt_caractere2_hex" type="number" min="0" max="7" placeholder="2º caractere"><br>
+                            <input id="ipt_caractere3_hex" type="number" min="0" max="7" placeholder="3º caractere">
+                            <input id="ipt_caractere4_hex" type="number" min="0" max="7" placeholder="4º caractere">
+                            <button onclick="octal_hexadecimal()">Calcular</button>
+                            <span id="resultado_hexadecimal"></span> <br>
+                    </div>
+                </div>
+                <div class="column-3"></div>
+            </div>
+            <a href="inicio.html">Voltar para a página inicial</a>
+        </section>
+    </main>
+</body>
+</html>
+<script>
+    function octal_decimal() {
+        var valor_caractere1 = ipt_caractere1.value 
+        var valor_caractere2 = ipt_caractere2.value 
+        var valor_caractere3 = ipt_caractere3.value 
+        var valor_caractere4 = ipt_caractere4.value 
+        var total = 8*8*8*valor_caractere1 + 8*8*valor_caractere2 + 8*valor_caractere3 + valor_caractere4
+        
+        resultado_decimal.innerHTML = total
+    }
+    function octal_binario() {
+        var valor1 = ipt_caractere1_bi.value || 0
+        var valor2 = ipt_caractere2_bi.value || 0
+        var valor3 = ipt_caractere3_bi.value || 0
+        var valor4 = ipt_caractere4_bi.value || 0
+        var binario1 = parseInt(valor1, 8).toString(2).padStart(3, '0');
+        var binario2 = parseInt(valor2, 8).toString(2).padStart(3, '0');
+        var binario3 = parseInt(valor3, 8).toString(2).padStart(3, '0');
+        var binario4 = parseInt(valor4, 8).toString(2).padStart(3, '0');
+
+        var total = `${binario1}${binario2}${binario3}${binario4}`
+
+        resultado_binario.innerHTML = total
+    }
+    function octal_hexadecimal() {
+        var valor1 = parseInt(ipt_caractere1_hex.value) || 0;
+        var valor2 = parseInt(ipt_caractere2_hex.value) || 0;
+        var valor3 = parseInt(ipt_caractere3_hex.value) || 0;
+        var valor4 = parseInt(ipt_caractere4_hex.value) || 0;
+
+        if (valor1 < 0 || valor1 > 7 || valor2 < 0 || valor2 > 7 || 
+            valor3 < 0 || valor3 > 7 || valor4 < 0 || valor4 > 7) {
+            alert("Por favor, digite apenas números octais (0-7) em todos os campos!");
+            return;
+        }
+
+        // Concatena os dígitos octais
+        var octal = valor1.toString() + valor2.toString() + valor3.toString() + valor4.toString();
+        
+        // Converte octal → decimal → hexadecimal
+        var decimal = parseInt(octal, 8);
+        var hex = decimal.toString(16).toUpperCase();
+
+        // Exibe o resultado
+        resultado_hexadecimal.innerHTML = hex;
+    }</script>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Public/assets/calcular.png" />
+    <link rel="stylesheet" href="css/decimal.css">
+    <title>SPTecher's Machine - decimal</title>
+</head>
+
+<body>
+    <header id="inicio">
+        <nav class="nav">
+            <a href="#inicio"> <img src="../Public/assets/SPTECH.png" alt="Logo_sptech"
+                    width="95"></a>
+            <h1>SPTecher's Machine</h1>
+            <div class="nav-list">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="decimal.html">Decimal</a></li>
+                    <li><a href="binario.html">Binario</a></li>
+                    <li><a href="octal.html">Octal</a></li>
+                    <li><a href="hexadecimal.html">Hexadecimal</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+    <section id="decimal">
+        <h2>Bem-vindo à aba Decimal! Aqui, vamos te ensinar como converter números entre as bases Decimal,
+            Binário, Octal e Hexadecimal. Siga as instruções e explore as diferentes formas de representar
+            números em cada base. </h2>
+        <div class="container">
+            <div class="column-1">
+            </div>
+            <div class="column-2">
+                <div>
+                    <h3>Decimal para Binário</h3>
+                    <h4>Digite o numero decimal: </h4><input id="decimal_binario" placeholder="ex:10516">
+                    <button onclick="decimalParaBinario()">Converter</button>
+                    <p id="resultado_binario"></p>
+                </div>
+                <div>
+                    <h3>Decimal para Octal</h3>
+                    <h4>Digite o numero decimal: </h4><input id="decimal_octal" placeholder="ex:10516">
+                    <button onclick="decimalParaOctal()">Converter</button>
+                    <p id="resultado_octal"></p>
+                </div>
+                <div>
+                    <h3>Decimal para Hexadecimal</h3>
+                    <h4>Digite o numero decimal: </h4><input id="decimal_hex" placeholder="ex:10516">
+                    <button onclick="decimalParaHex()">Converter</button>
+                    <p id="resultado_hex"></p>
+                </div>
+            </div>
+            <div class="column-3">
+            </div>
+        </div>
+
+
+        <a href="inicio.html">Voltar para a página inicial</a>
+    </section>
+    </main>
+</body>
+
+</html>
+<script>
+    function decimalParaBinario() {
+        var decimal = Number(decimal_binario.value);
+        if (decimal < 0 || isNaN(decimal)) {
+            alert("Número inválido! Digite um decimal positivo.");
+            return;
+        }
+        resultado_binario.innerHTML = "Binário: " + decimal.toString(2);
+    }
+
+    function decimalParaOctal() {
+        var decimal = Number(decimal_octal.value);
+        if (decimal < 0 || isNaN(decimal)) {
+            alert("Número inválido! Digite um decimal positivo.");
+            return;
+        }
+        resultado_octal.innerHTML = "Octal: " + decimal.toString(8);
+    }
+
+    function decimalParaHex() {
+        var decimal = Number(decimal_hex.value);
+        if (decimal < 0 || isNaN(decimal)) {
+            alert("Número inválido! Digite um decimal positivo.");
+            return;
+        }
+        resultado_hex.innerHTML = "Hexadecimal: " + decimal.toString(16).toUpperCase();
+    }
+</script>

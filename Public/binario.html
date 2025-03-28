@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Public/assets/calcular.png" />
+    <link rel="stylesheet" href="css/binario.css">
+    <title>SPTecher's Machine - Hexadecimal</title>
+</head>
+
+<body>
+    <header id="inicio">
+        <nav class="nav">
+            <a href="#inicio"> <img src="../Public/assets/SPTECH.png" alt="Logo_sptech" width="95"></a>
+            <h1>SPTecher's Machine</h1>
+            <div class="nav-list">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="decimal.html">Decimal</a></li>
+                    <li><a href="binario.html">Binario</a></li>
+                    <li><a href="octal.html">Octal</a></li>
+                    <li><a href="hexadecimal.html">Hexadecimal</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="decimal">
+            <h2>Bem-vindo à aba Binario! Aqui, vamos te ensinar como converter números entre as bases Decimal,
+                Binário, Octal e Hexadecimal. Siga as instruções e explore as diferentes formas de representar
+                números em cada base. </h2>
+            <div class="container">
+                <div class="column-1">
+                </div>
+                <div class="column-2">
+                    <div>
+                        <h3>Binario para outras bases</h3>
+                        <h4>Selecione o número binario:</h4>
+                        <center>
+                        <h6>11111111111111111</h6>
+                        <input type="checkbox" id="check17" value="65536">
+                        <input type="checkbox" id="check16" value="32768">
+                        <input type="checkbox" id="check15" value="16384">
+                        <input type="checkbox" id="check14" value="8192">
+                        <input type="checkbox" id="check13" value="4096">
+                        <input type="checkbox" id="check12" value="2048">
+                        <input type="checkbox" id="check11" value="1024">
+                        <input type="checkbox" id="check10" value="512">
+                        <input type="checkbox" id="check9" value="256">
+                        <input type="checkbox" id="check8" value="128">
+                        <input type="checkbox" id="check7" value="64">
+                        <input type="checkbox" id="check6" value="32">
+                        <input type="checkbox" id="check5" value="16">
+                        <input type="checkbox" id="check4" value="8">
+                        <input type="checkbox" id="check3" value="4">
+                        <input type="checkbox" id="check2" value="2">
+                        <input type="checkbox" id="check1" value="1"></center> <br>
+                        <button onclick="converter()">Converter</button>
+                    </div>
+                    <div>
+                        <h4 style="margin-top: 1rem;">Resultado decimal: </h4>
+                        <div ><p id="divdecimal"></p></div>
+                        
+                    </div>
+                    <div>
+                        <h4>Resultado octal</h4>
+                        <div><p id="divoctal"></p></div>
+                    </div>
+                    <div>
+                        <h4>Resultado hexadecimal</h4>
+                        <div><p id="divhexadecimal"></p></div>
+                        
+                    </div>
+                </div>
+                <div class="column-3"></div>
+            </div>
+
+        </section>
+        <a href="inicio.html">Voltar para a página inicial</a>
+    </main>
+</body>
+
+</html>
+<script>
+    function converter() {
+        var soma = 0
+        var i = 0
+        while (i < 17) {
+            var boxID = `check${i + 1}`
+            var boxELEMENT = document.getElementById(boxID)
+            soma += Number(boxELEMENT.checked) * Number(boxELEMENT.value)
+            i++
+        }
+        divdecimal.innerHTML = `Decimal: ${soma}`
+        divoctal.innerHTML = `Octal: ${soma.toString(8)}`
+        divhexadecimal.innerHTML = `Hexadecimal: ${soma.toString(16)}`
+    }
+</script>

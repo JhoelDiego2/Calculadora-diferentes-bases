@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Teko:wght@300..700&display=swap');
+
+:root {
+--azul-color: #11224c;
+--bege-color: #fbf5cd;
+--laranja-color: #fb992a;
+--cinza-color: #d0d3d4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Orbitron", sans-serif;
+    color: var(--cinza-color);
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0.308) 100%), url("https://i.imgur.com/pcxeHMK.png");
+    background-size: 100%;
+}
+a{
+    all: unset;
+    cursor: pointer;
+}
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#inicio{
+    height: 98%;
+}
+#inicio .nav{
+    width: 100%;
+    position: fixed;
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+    background-color: #11224c80;
+    box-shadow: 0 2px 7px 0 #000000fd;
+    animation: slideDown 1s ease;
+}
+#inicio .nav h1{
+    width: 10rem;
+    font-size: 2.2rem;
+}
+#inicio .nav .nav-list{
+    width: 50%;
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;   
+}
+#inicio .container {
+    min-height: 130vh;
+    height: 100%;
+    display: flex;
+}
+#inicio .container .column-1, .column-4{
+    width: 28%;
+}
+
+#inicio .container .column-2, .column-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    width: 25.3%;
+}
+#inicio .container .column-2 div{
+    background-color: var(--bege-color) ;
+    position: relative;
+    color: #11224c;
+    margin-right: 1rem;
+    font-size: 1.58rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+}
+#inicio .container .column-3 div{
+    background-color: var(--laranja-color);
+    position: relative;
+    margin-left: 1rem;
+    font-size: 1.48rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+}
+
+#inicio .container .column-2 .balao::after {
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    left: -30px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--bege-color);
+    transform: rotate(90deg);
+}
+#inicio .container .column-3 .balao-L::after {
+    content: "";
+    position: absolute;
+    bottom: 50px;
+    right: -25px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--laranja-color);
+    transform: rotate(270deg);
+}
+#sobre {
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.603) 0%, rgba(0, 0, 0, 0.493) 100%), url("https://i.imgur.com/0SL3Q5D.png");
+}
+#sobre h1{
+    text-align: center;
+    padding-top: 4rem;
+    font-size: 4rem;
+    margin-bottom: 4rem;
+}
+#sobre .container {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+#sobre .container .column-1-sobre, .column-4-sobre{
+    padding: 1rem;
+    width: 27%;
+}
+#sobre .container .column-2-sobre, .column-3-sobre{
+    width: 29%;
+    font-size: 2rem;
+    margin-top: -30rem;
+}
+#sobre p{
+    margin-top: 6rem;
+}
+
+#bege, #begep{
+    background-color: var(--bege-color);
+    color: #11224c;
+    margin-right: 1rem;
+    border-radius: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 11rem;
+}
+#Laranja, #laranjap{
+    background-color: var(--laranja-color);
+    color: #ffffff;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 11rem;
+}
+#catarina{
+    border: 0.5rem solid var(--bege-color)
+
+}
+#jhoel{
+    border: 0.5rem solid var(--laranja-color)
+
+}
+#github{
+    margin-top: 3rem;
+    border-radius: 5rem;
+}
